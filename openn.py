@@ -7,7 +7,7 @@ def apps(text):
         if  "youtube" in text:
            ww.open("https://www.youtube.com")
         
-        elif  "chatgpt" in text:
+        elif  "chat gpt" in text:
             ww.open("https://chat.openai.com/chat")
         
         elif "instagram" in text:

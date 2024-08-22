@@ -77,12 +77,13 @@ def start_assistance():
 # Set up the GUI
 root = tk.Tk()
 root.title("Voice Command Application")
-root.geometry("800x600")  # Adjusted for better visual appeal
+root.geometry("1600x600")  # Adjusted for better visual appeal
 
 # Load and set the background image
 try:
     bg_image = Image.open("background.jpg")  # Ensure the image file is in the same folder as the script
-    bg_image = bg_image.resize((800, 600), Image.ANTIALIAS)  # Resize to match window dimensions
+    bg_image = bg_image.resize((1600, 800), Image.Resampling.LANCZOS)  # Resize to match window dimensions
+
     bg_photo = ImageTk.PhotoImage(bg_image)
     canvas = tk.Canvas(root, width=800, height=600)
     canvas.pack(fill="both", expand=True)
@@ -91,13 +92,13 @@ except Exception as e:
     print(f"Error loading background image: {e}")
 
 # Create and place widgets
-frame = tk.Frame(root, bg="#ffffff", bd=5)
-frame.place(relwidth=0.9, relheight=0.9, relx=0.05, rely=0.05)
+frame = tk.Frame(root, bg="#A9A9A9", bd=2)
+frame.place(relwidth=1.0, relheight=0.5, relx=0.03, rely=0.7)
 
-label = tk.Label(frame, text="Welcome to the Voice Command App", font=("Helvetica", 16), bg="#ffffff")
+label = tk.Label(frame, text="Welcome Master", font=("Helvetica", 16), bg="#D3D3D3")
 label.pack(pady=20)
 
-start_button = tk.Button(frame, text="Start Listening", command=start_assistance, font=("Helvetica", 14), bg="#4CAF50", fg="white")
+start_button = tk.Button(frame, text="Start Listening", command=start_assistance, font=("Helvetica", 14), bg="#ADD8E6", fg="black")
 start_button.pack(pady=10)
 
 exit_button = tk.Button(frame, text="Exit", command=root.quit, font=("Helvetica", 14), bg="#f44336", fg="white")
